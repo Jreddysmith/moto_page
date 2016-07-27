@@ -1,0 +1,2 @@
+module NutritiondetailsHelper
+end

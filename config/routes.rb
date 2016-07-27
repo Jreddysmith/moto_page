@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+
+  get 'nutritiondetails/index'
+
+  get 'nutritions/index'
+
+  get 'users/index'
+
+  root 'mainpages#index'
+
+  get 'homepages' => 'homepages#index'
+
+  get 'users' => 'users#index'
+
+  get 'nutritions' => 'nutritions#index'
+
+  get 'nutritiondetails' => 'nutritiondetails#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
