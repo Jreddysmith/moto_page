@@ -46,8 +46,10 @@ Rails.application.routes.draw do
   get 'homepages'           => 'homepages#index'
 
               # USERS ROUTES
-  get 'users'               => 'users#index'
+  post 'users'              => 'users#create'
 
+  post 'sessions'           => 'sessions#create'
+  delete '/sessions'        => 'sessions#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
