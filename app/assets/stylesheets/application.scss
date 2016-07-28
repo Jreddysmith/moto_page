@@ -15,24 +15,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*
-.navbar {
-	text-align: center;
-}
-
-
-
-
-
-*/
+            /************************************* SHARED FOLDER *************************************/
 
 .center-nav {
     display: inline-block;
     float: none;
     text-align: center;
 }
-
-
 
 
 .nav-tabs {
@@ -61,5 +50,33 @@ div#OR {
 .btnbtn-primary {
 	margin-top: 2px;
 }
+
+
+
+/************************************** EVENTS FOLDER **************************************/
+
+.col-lg-7 {
+    height: 450px;
+    border: 1px solid black;
+    margin-left: 10px;
+    overflow: scroll;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
