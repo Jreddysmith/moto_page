@@ -16,24 +16,13 @@
 @import "bootstrap";
 @import "mainpage";
 
-/*
-.navbar {
-	text-align: center;
-}
-
-
-
-
-
-*/
+            /************************************* SHARED FOLDER *************************************/
 
 .center-nav {
     display: inline-block;
     float: none;
     text-align: center;
 }
-
-
 
 
 .nav-tabs {
@@ -62,5 +51,34 @@ div#OR {
 .btnbtn-primary {
 	margin-top: 2px;
 }
+
+
+
+/************************************** EVENTS FOLDER **************************************/
+
+.col-lg-6 {
+    height: 450px;
+    margin-left: 10px;
+    overflow: auto;
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
