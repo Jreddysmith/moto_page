@@ -1,0 +1,2 @@
+module FlashbackdetailsHelper
+end
