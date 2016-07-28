@@ -1,20 +1,53 @@
 Rails.application.routes.draw do
 
-  get 'nutritiondetails/index'
-
-  get 'nutritions/index'
-
-  get 'users/index'
-
   root 'mainpages#index'
 
-  get 'homepages' => 'homepages#index'
+              # EVENTS ROUTES
+  get 'events'              => 'events#index'
 
-  get 'users' => 'users#index'
+  get 'eventdetails'        => 'eventdetails#index'
 
-  get 'nutritions' => 'nutritions#index'
+              # FLAHBACKS ROUTES
+  get 'flashbacks'          => 'flashbacks#index'
 
-  get 'nutritiondetails' => 'nutritiondetails#index'
+  get 'flashbackdetails'    => 'flashbackdetails#index'
+
+              # GARAGES ROUTES
+  get 'garages'             => 'garages#index'
+
+  get 'garagedetails'       => 'garagedetails#index'
+
+              # NUTRITIONS ROUTES
+  get 'nutritions'          => 'nutritions#index'
+
+  get 'nutritiondetails'    => 'nutritiondetails#index'
+
+              # SPONSORS ROUTES
+  get 'sponsors'            => 'sponsors#index'
+
+  get 'sponsordetails'      => 'sponsordetails#index'
+
+              # TOYTRACKS ROUTES
+  get 'toytracks'           => 'toytracks#index'
+
+  get 'toytrackdetails'     => 'toytrackdetails#index'
+
+              # TRAININGS ROUTES
+  get 'trainings'           => 'trainings#index'
+
+  get 'trainingdetails'     => 'trainingdetails#index'
+
+              # YARDSALES ROUTES
+  get 'yardsales'           => 'yardsales#index'
+
+  get 'yardsaledetails'     => 'yardsaledetails#index'
+
+              # HOMEPAGES ROUTES
+  get 'homepages'           => 'homepages#index'
+
+              # USERS ROUTES
+  get 'users'               => 'users#index'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
