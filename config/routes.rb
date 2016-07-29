@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
               # EVENTS ROUTES
   get 'events'              => 'events#index'
+  post 'events'             => 'events#create'
 
-  get 'eventdetails'        => 'eventdetails#index'
+  get 'eventdetails/:id'        => 'eventdetails#index'
 
               # FLAHBACKS ROUTES
   get 'flashbacks'          => 'flashbacks#index'
