@@ -9,6 +9,7 @@
 
 /************************************** EVENTS FOLDER **************************************/
 
+
 #event-img-div {
 	position: fixed;
 	/* width: 200px; */
@@ -19,8 +20,5 @@
 	right: 0;
 	background: url('/assets/crowd.png') no-repeat center center;
 	background-size: cover;
-}
-
-img {
-	opacity: 0.5;
+	overflow: scroll;
 }
