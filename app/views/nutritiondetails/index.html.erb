@@ -1,17 +1,17 @@
 <div id="nutrition-img-div">
 <%= render :partial => "shared/navbar" %>
-<div class="detail_div">
-	<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @nutrition.title %></h1>
-	<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @nutrition.picture.url %>">
-	</center>
-	<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @nutrition.user.first_name %> <%= @nutrition.user.last_name %><span style="margin-left: 10vw; font-size: 2vmin;">
-		<% if @votesarray.include?(@nutrition.id) %>
-						You voted for this Plan
-					<% else %>	
-						<a href="/nutrition_votes/<%= @nutrition.id %>">Vote for this plan</a>
-					<% end %>
-	</span></h2>
-	<center><p style="margin: 3vh 30vw 0 30vw;"><%= @nutrition.content %></p></center>
-	</br></br></br></br></br></br>
-</div>
+	<div class="detail_div">
+		<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @nutrition.title %></h1>
+		<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @nutrition.picture.url %>">
+		</center>
+		<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @nutrition.user.first_name %> <%= @nutrition.user.last_name %><span style="margin-left: 10vw; font-size: 2vmin;">
+			<% if @votesarray.include?(@nutrition.id) %>
+							You voted for this Plan
+						<% else %>	
+							<a href="/nutrition_votes/<%= @nutrition.id %>">Vote for this plan</a>
+						<% end %>
+		</span></h2>
+		<center><p style="margin: 3vh 30vw 0 30vw;"><%= @nutrition.content %></p></center>
+		</br></br></br></br></br></br>
+	</div>
 </div>
