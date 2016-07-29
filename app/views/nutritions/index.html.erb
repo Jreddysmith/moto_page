@@ -1,8 +1,36 @@
 <%= render :partial => "shared/navbar" %>
 
-<h1><a href="/homepages">Back to Home Page</a></h1>
-<h1>This is out nutritions page, every page will be the copy of this with diferent background</h1>
-<h1>This page will display list of all content for nutrition</h1>
-<h1><a href="/nutritiondetails">Link to Nutrition Details</a></h1>
-<h1>Need a form to create new post for nutrition, side by side with list div</h1>
+<div class="eventsList">
+  <center><h2>Nutrition</h2></center>
+  <div class="col-lg-6">
+    <center><h3>Diet Plans</h3></center>
+    <table>
+      <tr>
+        <th>Add an Event</th>
+        <th>Date</th>
+        <th>Posted by</th>
+      </tr>
+      <tr>
+        <td>Sample Sample Sample Sample Sample Sample</td>
+        <td>Sample</td>
+        <td>Sample</td>
+      </tr>
+    </table>
+  </div>
 
+  <div class="col-lg-4 pull-right">
+    <center>
+      <form>
+        <div class="form-group">
+          <label>Share your Diet with us!</label>
+          <input type="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea class="form-control" rows="7"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </center>
+  </div>
+</div>
