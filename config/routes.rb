@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'events'              => 'events#index'
   post 'events'             => 'events#create'
 
-  get 'eventdetails/:id'        => 'eventdetails#index'
+  get 'eventdetails/:id'    => 'eventdetails#index'
 
               # FLAHBACKS ROUTES
   get 'flashbacks'          => 'flashbacks#index'
@@ -20,8 +20,11 @@ Rails.application.routes.draw do
 
               # NUTRITIONS ROUTES
   get 'nutritions'          => 'nutritions#index'
+  post 'nutritions'         => 'nutritions#create'
 
-  get 'nutritiondetails'    => 'nutritiondetails#index'
+  get 'nutritiondetails/:id'=> 'nutritiondetails#index'
+
+  get 'nutrition_votes/:id'  => 'nutrition_votes#create'
 
               # SPONSORS ROUTES
   get 'sponsors'            => 'sponsors#index'

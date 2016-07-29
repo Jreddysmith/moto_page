@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	before_action :require_login, only: [:index]
 	def index
 		@user = User.find(session[:user_id]) if session[:user_id]
-		@event = Event.all
+		@events = Event.where('date > ?', Time.now.strftime("%Y-%m-%d"))
 	end
 	def create
 		event = Event.new(event_params)

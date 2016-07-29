@@ -1,4 +1,13 @@
+<div id="eventdetails-img-div">
 <%= render :partial => "shared/navbar" %>
-<%= @event.name %>
-<img class="img-responsive" style="width:100em; height:100em" src="<%= @event.picture.url %>">
+<div class="detail_div">
+	<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @event.name %></h1>
+	<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @event.picture.url %>">
+	</center>
+	<h2 style="margin: 3vh 22vw 0 22vw;">Event date: <%= @event.date.strftime("%B %e %Y") %></h2>
+	<h2 style="margin: 3vh 22vw 0 22vw;">Location: <%= @event.city %>, <%= @event.state %></h2>
+	<center><p style="margin: 3vh 30vw 0 30vw;"><%= @event.content %></p></center>
+	</br></br></br></br></br></br>
+</div>
+</div>
 

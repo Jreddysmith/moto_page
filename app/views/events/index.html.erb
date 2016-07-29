@@ -2,24 +2,30 @@
 <%= render :partial => "shared/navbar" %>
 
 <div>
-  <center><h2>Events</h2></center>
-  <div class="col-lg-6">
+  <center><h2 style="color:red">Events</h2></center>
+  <div class="col-lg-7">
     <center><h2>List of events</h2></center>
     <div class="table-responsive">
       <table class="table table-hover">
         <thead>
           <tr>
             <th><center>Event</center></th>
+            <th>Location</th>
             <th>Date</th>
             <th>Posted by</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody> 
-          <tr>
-            <td>Sample Sample Sample Sample Sample Sample</td>
-            <td>Sample</td>
-            <td>Sample</td>
-          </tr>
+        <tbody>
+        <% @events.each do |e| %>
+              <tr>
+                <td><%= e.name %></td>
+                <td><%= e.city %>, <%= e.state %> </td>
+                <td><%= e.date.strftime("%B %e %Y") %></td>
+                <td><%= e.user.first_name %> <%= e.user.last_name %></td>
+                <td><a href="/eventdetails/<%= e.id %>">Detail.</a></td>
+              </tr>
+        <% end %>
         </tbody>
       </table>
      </div> 
@@ -28,6 +34,7 @@
   <div class="eventList">
     <div class="col-lg-4 pull-right">
       <center>
+      <h3>Post an event</h3>
         <form action="/events" method="post" enctype="multipart/form-data">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <input type="hidden" name='event[user_id]' value="<%= session[:user_id] %>">
