@@ -40,3 +40,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # gem 'debugger', group: [:development, :test]
 
 gem 'hirb'
+
+gem "paperclip", "~> 4.2"

@@ -22,27 +22,29 @@
 
   <div class="col-lg-4 pull-right">
     <center>
-      <form>
+      <form action="/events" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name='event[user_id]' value="<%= session[:user_id] %>">
         <div class="form-group">
           <label>Name of the Event</label>
-          <input type="email" class="form-control">
+          <input name="event[name]" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label>Description</label>
-          <textarea class="form-control" rows="7"></textarea>
+          <textarea name="event[content]" class="form-control" rows="7"></textarea>
         </div>
         <div class="form-group">
           <label>Date</label>
-          <input type="date" class="form-control">
+          <input name="event[date]" type="date" min="<%= Time.now.strftime("%Y-%m-%d") %>" class="form-control">
         </div>
         <div class="row">
           <div class="form-group col-sm-6">
           <label>City</label>
-          <input type="text" class="form-control" placeholder="City">
+          <input name="event[city]" type="text" class="form-control" placeholder="City">
         </div>
         <div class="form-group col-sm-6">
           <label >State</label>
-          <select name="user[state]" class="form-control">
+          <select name="event[state]" class="form-control">
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -98,8 +100,8 @@
         </div>
         <div class="form-group">
           <label>File input</label>
-          <input type="file">
-          <p class="help-block">Example block-level help text here.</p>
+          <input type="file" name="event[picture]">
+          <p class="help-block">Upload your picture</p>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
