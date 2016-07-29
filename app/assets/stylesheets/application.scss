@@ -15,6 +15,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "mainpage";
+@import "flashbacks";
+@import "events";
+@import "garages";
 
             /************************************* SHARED FOLDER *************************************/
 
@@ -62,6 +65,9 @@ div#OR {
     overflow: auto;
     margin-bottom: 50px;
     margin-top: 15px;
+    background-color: black;
+    opacity:2.0;
+    color:white;
 }
 
 

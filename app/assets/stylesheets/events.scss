@@ -14,3 +14,14 @@
 	border: 1px solid black;
 	margin-left: 5px;
 }
+#event-img-div {
+	position: fixed;
+	/* width: 200px; */
+	/* height: 200px; */
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: url('/assets/crowd.png') no-repeat center center;
+	background-size: cover;
+}
