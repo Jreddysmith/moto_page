@@ -18,8 +18,8 @@
         <tbody>
         <% @nutritions.each do |n| %>
               <tr>
-                <td><%= n.title %></td>
-                <td><%= n.user.first_name %> <%= n.user.last_name %></td>
+                <td><%= n.title.capitalize %></td>
+                <td><%= n.user.first_name.capitalize %> <%= n.user.last_name.capitalize %></td>
                 <td><center><%= n.vote %></center></td>
                 <td><a href="/nutritiondetails/<%= n.id %>">Detail.</a></td>
               </tr>

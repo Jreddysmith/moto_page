@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
               # FLAHBACKS ROUTES
   get 'flashbacks'          => 'flashbacks#index'
+  post 'flashbacks'         => 'flashbacks#create'
 
-  get 'flashbackdetails'    => 'flashbackdetails#index'
+  get 'flashbackdetails/:id'    => 'flashbackdetails#index'
 
               # GARAGES ROUTES
   get 'garages'             => 'garages#index'
@@ -25,12 +26,13 @@ Rails.application.routes.draw do
 
   get 'nutritiondetails/:id'=> 'nutritiondetails#index'
 
-  get 'nutrition_votes/:id'  => 'nutrition_votes#create'
+  get 'nutrition_votes/:id' => 'nutrition_votes#create'
 
               # SPONSORS ROUTES
   get 'sponsors'            => 'sponsors#index'
+  post'sponsors'            => 'sponsors#create'
 
-  get 'sponsordetails'      => 'sponsordetails#index'
+  get 'sponsordetails/:id'      => 'sponsordetails#index'
 
               # TOYTRACKS ROUTES
   get 'toytracks'           => 'toytracks#index'

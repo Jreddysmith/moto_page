@@ -1,10 +1,10 @@
 <div id="training-img-div">
 <%= render :partial => "shared/navbar" %>
 	<div class="detail_div">
-		<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @training.title %></h1>
+		<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @training.title.capitalize %></h1>
 		<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @training.picture.url %>">
 		</center>
-		<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @training.user.first_name %> <%= @training.user.last_name %><span style="margin-left: 10vw; font-size: 2vmin;">
+		<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @training.user.first_name.capitalize %> <%= @training.user.last_name.capitalize %><span style="margin-left: 10vw; font-size: 2vmin;">
 			<% if @votesarray.include?(@training.id) %>
 							You voted for this Plan
 						<% else %>	

@@ -19,6 +19,7 @@
 	right: 0;
 	background: url('/assets/main.jpg') no-repeat center center;
 	background-size: cover;
+	text-decoration: none;
 }
 #main-img {
 	background-size: contain;
@@ -26,12 +27,12 @@
 
 #h1-fix {
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 24px;
+    font-size: 10vw;
     font-style: normal;
     font-variant: normal;
     font-weight: 500;
-    line-height: 26.4px;
+    line-height: 10vh;
     text-decoration: none;
-    margin-top: 400px;
+    margin: 30vh 10vw 0 10vw;
 }
 

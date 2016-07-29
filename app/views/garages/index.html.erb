@@ -2,7 +2,7 @@
 <%= render :partial => "shared/navbar" %>
 
 <div>
-  <center><h1 style="color:red">Mod your Bike</h1></center>
+  <center><h1 style="color:red">Bike set ups</h1></center>
   <div class="col-lg-7">
     <center><h2>Modification</h2></center>
     <div class="table-responsive">
@@ -17,8 +17,8 @@
         <tbody>
         <% @garages.each do |g| %>
               <tr>
-                <td><%= g.title %></td>
-                <td><%= g.user.first_name %> <%= g.user.last_name %></td>
+                <td><%= g.title.capitalize %></td>
+                <td><%= g.user.first_name.capitalize %> <%= g.user.last_name.capitalize %></td>
                 <td><a href="/garagedetails/<%= g.id %>">Detail.</a></td>
               </tr>
         <% end %>

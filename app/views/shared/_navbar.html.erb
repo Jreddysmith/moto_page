@@ -11,7 +11,7 @@
       </button>
       <a class="navbar-brand" href="/homepages">Home</a>
       <% if session[:user_id] %>
-      <span class="navbar-brand" style="color: white;">Welcome <%= @user.first_name %>!</span>
+      <span class="navbar-brand" style="color: white;">Welcome <%= @user.first_name.capitalize %>!</span>
       <% else %>
       <span class="navbar-brand" style="color: white;">Welcome Guest!</span>
       <% end %>
@@ -26,9 +26,9 @@
 		<li><a href="/garages">Bike Garage</a></li>
 		<li><a href="/nutritions">Nutrition</a></li>
 		<li><a href="/sponsors">Sponsors Info</a></li>
-		<li><a href="/toytracks">Toy Tracks</a></li>
+		<!-- <li><a href="/toytracks">Toy Tracks</a></li> -->
 		<li><a href="/trainings">Training</a></li>
-		<li><a href="/yardsales">Yard Sales</a></li>
+		<!-- <li><a href="/yardsales">Yard Sales</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if session[:user_id] %>
@@ -51,9 +51,8 @@
 								<!-- END MAIN DIV -->
 
                 <!-- LOGIN / REGISTRATION -->
-
+<% if !session[:user_id] %>
 <!-- Large modal -->
-
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -226,3 +225,4 @@
         </div>
     </div>
 </div>
+<% end %>

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729103243) do
+ActiveRecord::Schema.define(version: 20160729152723) do
+
+  create_table "diet_votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "nutrition_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "diet_votes", ["nutrition_id"], name: "index_diet_votes_on_nutrition_id"
+  add_index "diet_votes", ["user_id"], name: "index_diet_votes_on_user_id"
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -36,6 +46,10 @@ ActiveRecord::Schema.define(version: 20160729103243) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "flashbacks", ["user_id"], name: "index_flashbacks_on_user_id"
@@ -86,6 +100,10 @@ ActiveRecord::Schema.define(version: 20160729103243) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "sponsors", ["user_id"], name: "index_sponsors_on_user_id"
@@ -96,6 +114,10 @@ ActiveRecord::Schema.define(version: 20160729103243) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "toytracks", ["user_id"], name: "index_toytracks_on_user_id"
@@ -143,6 +165,10 @@ ActiveRecord::Schema.define(version: 20160729103243) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "yardsales", ["user_id"], name: "index_yardsales_on_user_id"

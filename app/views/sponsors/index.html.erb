@@ -1,5 +1,64 @@
 <div id="sponsors-img-div">
-	
-
 <%= render :partial => "shared/navbar" %>
+
+<div>
+  <center><h1 style="color:brown;">Looking for Sponsors?</h1></center>
+  <div class="col-lg-7">
+    <center><h2>Info about Sponsors</h2></center>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><center>List</center></th>
+            <th>From</th>
+            <th>Posted by</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @sponsors.each do |s| %>
+              <tr>
+                <td><%= s.title.capitalize %></td>
+                <td><%= s.user.first_name.capitalize %> <%= s.user.last_name.capitalize %></td>
+                <td><a href="/sponsordetails/<%= s.id %>">Detail.</a></td>
+              </tr>
+        <% end %>
+        </tbody>
+      </table>
+     </div> 
+  </div>
+  
+  <div class="eventList">
+    <div class="col-lg-4 pull-right">
+      <center>
+      <h3>Create a Posted</h3>
+        <form action="/sponsors" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name='sponsor[user_id]' value="<%= session[:user_id] %>">
+          <div class="form-group">
+            <label>Title</label>
+            <input name="sponsor[title]" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Name of Sponsor</label>
+            <input name="sponsor[name]" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea name="sponsor[content]" class="form-control" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <label>File input</label>
+            <input type="file" name="sponsor[picture]">
+            <p class="help-block">Upload your picture</p>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </center>
+    </div>
+  </div>
+
 </div>
+
+
+

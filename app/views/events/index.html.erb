@@ -19,10 +19,10 @@
         <tbody>
         <% @events.each do |e| %>
               <tr>
-                <td><%= e.name %></td>
+                <td><%= e.name.capitalize %></td>
                 <td><%= e.city %>, <%= e.state %> </td>
                 <td><%= e.date.strftime("%B %e %Y") %></td>
-                <td><%= e.user.first_name %> <%= e.user.last_name %></td>
+                <td><%= e.user.first_name.capitalize %> <%= e.user.last_name.capitalize %></td>
                 <td><a href="/eventdetails/<%= e.id %>">Detail.</a></td>
               </tr>
         <% end %>

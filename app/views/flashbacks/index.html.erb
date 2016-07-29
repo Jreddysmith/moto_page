@@ -1,24 +1,58 @@
-
 <div id="flashback-img-div">
 <%= render :partial => "shared/navbar" %>
-<center><h1>Please Share Your Memories with us!</h1></center>
 
-<div class="col-lg-6">
-	<h3>Memories</h3>
-	<ul>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt inventore maiores odio praesentium atque provident doloremque minima possimus, at cumque quam nihil nesciunt ducimus recusandae est iure totam, quis quos.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quia dignissimos pariatur iste, vitae ullam quo expedita error a distinctio, corporis laborum adipisci, neque nam veniam quam at! Laborum, blanditiis.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores debitis culpa possimus quidem? Aspernatur dolores eaque quidem voluptatibus ab exercitationem blanditiis quasi deserunt facere qui, itaque, voluptates dolore, labore quae.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptates quaerat ex nobis. Blanditiis accusamus fugit nulla at reprehenderit nostrum tenetur ea laboriosam sit aut error, quos ex cupiditate porro.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet ea aliquid asperiores repellendus praesentium tempora ipsa, vero suscipit corporis mollitia dicta consequatur deserunt vel at amet eos perferendis, soluta facere?</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus ut, doloribus non odio delectus molestiae ullam! Amet ullam voluptates officiis ea dolorem optio, quam officia deserunt itaque maxime dicta asperiores.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores debitis culpa possimus quidem? Aspernatur dolores eaque quidem voluptatibus ab exercitationem blanditiis quasi deserunt facere qui, itaque, voluptates dolore, labore quae.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptates quaerat ex nobis. Blanditiis accusamus fugit nulla at reprehenderit nostrum tenetur ea laboriosam sit aut error, quos ex cupiditate porro.</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet ea aliquid asperiores repellendus praesentium tempora ipsa, vero suscipit corporis mollitia dicta consequatur deserunt vel at amet eos perferendis, soluta facere?</li><hr>
-		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus ut, doloribus non odio delectus molestiae ullam! Amet ullam voluptates officiis ea dolorem optio, quam officia deserunt itaque maxime dicta asperiores.</li>
-
-	</ul>
+<div>
+  <center><h1 style="color:red">Flashback Section</h1></center>
+  <div class="col-lg-7">
+    <center><h2>Flashbacks</h2></center>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><center>Post</center></th>
+            <th>Posted by</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @flashbacks.each do |f| %>
+              <tr>
+                <td><%= f.title.capitalize %></td>
+                <td><%= f.user.first_name.capitalize %> <%= f.user.last_name.capitalize %></td>
+                <td><a href="/flashbackdetails/<%= f.id %>">Detail.</a></td>
+              </tr>
+        <% end %>
+        </tbody>
+      </table>
+     </div> 
+  </div>
+  
+  <div class="eventList">
+    <div class="col-lg-4 pull-right">
+      <center>
+      <h3>Create a Posted</h3>
+        <form action="/flashbacks" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name='flashback[user_id]' value="<%= session[:user_id] %>">
+          <div class="form-group">
+            <label>Title</label>
+            <input name="flashback[title]" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea name="flashback[content]" class="form-control" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <label>File input</label>
+            <input type="file" name="flashback[picture]">
+            <p class="help-block">Upload your picture</p>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </center>
+    </div>
+  </div>
 
 </div>
 
-</div>
+

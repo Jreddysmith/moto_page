@@ -24,6 +24,7 @@
 @import "trainings";
 @import "yardsales";
 @import "eventdetails";
+@import "homepages";
 
             /************************************* SHARED FOLDER *************************************/
 
@@ -33,10 +34,9 @@
     text-align: center;
 }
 
-
-.nav-tabs {
-    margin-bottom: 15px;
-}
+.navbar{
+    margin-bottom: 0px !important;
+} 
 .sign-with {
     margin-top: 25px;
     padding: 20px;
@@ -144,10 +144,17 @@ a {
 
 .jumbotron {
     text-align: center;
+    padding-left: 30vw;
 }
 
+.centerContainer {
+    width: 50%;
+    height: 50%;
+    background-color: red;
+    border: 1px solid black;
+    text-align: center;
 
-
+}
 
 
 

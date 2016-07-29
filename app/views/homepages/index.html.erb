@@ -1,16 +1,23 @@
+
 <%= render :partial => "shared/navbar" %>
-
-
-<div class="jumbotron">
-	<h2>Hello, world!</h2>
-	<h2>Hello, world!</h2>
-	<h2>Hello, world!</h2>
-	<h2>Hello, world!</h2>
-	<h2>Hello, world!</h2>
-</div>
-<div class="jumbotron">
-	<h2>Hello, world!</h2>
-</div>
-<div class="jumbotron">
-	<h2>Hello, world!</h2>
+<div id="homepage-img-div">
+	<div class="detail_div">
+	<% if @training && @nutrition %>
+		<center><h2>Hot Topic</h2></center>
+		<% if @training.vote > @nutrition.vote %>
+		<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @training.title.capitalize %></h1>
+		<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @training.picture.url %>">
+		</center>
+		<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @training.user.first_name.capitalize %> <%= @training.user.last_name.capitalize %><span style="margin-left: 10vw; font-size: 2vmin;"><%= @training.vote %> Vote(s)</span></h2>
+		<center><p style="margin: 3vh 30vw 0 30vw;"><%= @training.content %></p></center>
+		<% else %>
+		<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @nutrition.title.capitalize %></h1>
+		<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @nutrition.picture.url %>">
+		</center>
+		<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @nutrition.user.first_name.capitalize %> <%= @nutrition.user.last_name.capitalize %><span style="margin-left: 10vw; font-size: 2vmin;"><%= @nutrition.vote %> Vote(s)</span></h2>
+		<center><p style="margin: 3vh 30vw 0 30vw;"><%= @nutrition.content %></p></center>
+		<% end %>
+		</br></br></br></br></br></br>
+	<% end %>
+	</div>	
 </div>
