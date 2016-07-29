@@ -1,3 +1,17 @@
-<h1>Trainingdetails#index</h1>
-<p>Find me in app/views/trainingdetails/index.html.erb</p>
+<div id="training-img-div">
 <%= render :partial => "shared/navbar" %>
+	<div class="detail_div">
+		<center><h1 style="color: brown;margin: 3vh 20vw 0 20vw;"><%= @training.title %></h1>
+		<img class="img-responsive" style="width:20vw; height:25vh" src="<%= @training.picture.url %>">
+		</center>
+		<h2 style="margin: 3vh 22vw 0 22vw;">Posted By: <%= @training.user.first_name %> <%= @training.user.last_name %><span style="margin-left: 10vw; font-size: 2vmin;">
+			<% if @votesarray.include?(@training.id) %>
+							You voted for this Plan
+						<% else %>	
+							<a href="/training_votes/<%= @training.id %>">Vote for this plan</a>
+						<% end %>
+		</span></h2>
+		<center><p style="margin: 3vh 30vw 0 30vw;"><%= @training.content %></p></center>
+		</br></br></br></br></br></br>
+	</div>
+</div>

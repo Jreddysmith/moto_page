@@ -1,4 +1,59 @@
 <div id="training-img-div">
-	
 <%= render :partial => "shared/navbar" %>
+
+<div>
+  <center><h1 style="color:red">Training for Racer</h1></center>
+  <div class="col-lg-7">
+    <center><h2>Post about training</h2></center>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><center>Post</center></th>
+            <th>Posted by</th>
+            <th>Voted</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @trainings.each do |t| %>
+              <tr>
+                <td><%= t.title %></td>
+                <td><%= t.user.first_name %> <%= t.user.last_name %></td>
+                <td><center><%= t.vote %></center></td>
+                <td><a href="/trainingdetails/<%= t.id %>">Detail.</a></td>
+              </tr>
+        <% end %>
+        </tbody>
+      </table>
+     </div> 
+  </div>
+  
+  <div class="eventList">
+    <div class="col-lg-4 pull-right">
+      <center>
+      <h3>Create a Posted</h3>
+        <form action="/trainings" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name='training[user_id]' value="<%= session[:user_id] %>">
+          <div class="form-group">
+            <label>Title</label>
+            <input name="training[title]" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea name="training[content]" class="form-control" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <label>File input</label>
+            <input type="file" name="training[picture]">
+            <p class="help-block">Upload your picture</p>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </center>
+    </div>
+  </div>
+
 </div>
+

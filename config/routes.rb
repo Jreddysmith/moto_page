@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 
               # GARAGES ROUTES
   get 'garages'             => 'garages#index'
+  post 'garages'            => 'garages#create'
 
-  get 'garagedetails'       => 'garagedetails#index'
+  get 'garagedetails/:id'   => 'garagedetails#index'
 
               # NUTRITIONS ROUTES
   get 'nutritions'          => 'nutritions#index'
@@ -38,8 +39,10 @@ Rails.application.routes.draw do
 
               # TRAININGS ROUTES
   get 'trainings'           => 'trainings#index'
+  post 'trainings'          => 'trainings#create'  
 
-  get 'trainingdetails'     => 'trainingdetails#index'
+  get 'trainingdetails/:id' => 'trainingdetails#index'
+  get 'training_votes/:id'  => 'training_votes#create'
 
               # YARDSALES ROUTES
   get 'yardsales'           => 'yardsales#index'

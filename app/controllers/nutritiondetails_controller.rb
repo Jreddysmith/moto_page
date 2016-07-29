@@ -1,4 +1,5 @@
 class NutritiondetailsController < ApplicationController
+	before_action :require_login, only: [:index]
   def index
   	@nutrition = Nutrition.find(params[:id])
   	@user = User.find(session[:user_id]) if session[:user_id]
