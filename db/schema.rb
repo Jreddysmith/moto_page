@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160729152723) do
 
-  create_table "diet_votes", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "nutrition_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "diet_votes", ["nutrition_id"], name: "index_diet_votes_on_nutrition_id"
-  add_index "diet_votes", ["user_id"], name: "index_diet_votes_on_user_id"
-
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "city"
